@@ -189,7 +189,7 @@ html {
 
             input {
 
-                &.login_btn {
+                &#login_btn {
                     .CTA();
                     .hover1();
                     line-height: 1;
