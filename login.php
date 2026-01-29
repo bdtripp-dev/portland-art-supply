@@ -19,7 +19,7 @@ require_once('includes/page_constants.php');
 
 $login_username = get_post_value(LOGIN_USERNAME_KEY);
 $login_password = get_post_value(LOGIN_PASSWORD_KEY);
-$login_pressed = get_post_value(LOGIN_BUTTON_VALUE);
+$login_pressed = get_post_value(LOGIN_BUTTON_KEY);
 $errorStatus = new stdClass();
 
 if (!$login_pressed && isset($_SERVER['HTTP_REFERER'])) {
@@ -95,7 +95,7 @@ if (!$login_pressed && isset($_SERVER['HTTP_REFERER'])) {
                     </span>
                 </div>
             </section>
-            <input class="login_btn" type="submit" name="<?php echo LOGIN_BUTTON_VALUE; ?>" value="Log In" />
+            <input id="<?php echo LOGIN_BUTTON_ID; ?>" type="submit" name="<?php echo LOGIN_BUTTON_KEY; ?>" value="Log In" />
             <p>- or -</p>
             <div class="<?php echo LINKS_CLASS; ?>">
                 <a id="<?php echo CREATE_ACCOUNT_LINK_ID; ?>" href="<?php echo CREATE_ACCOUNT_PAGE; ?>">Create an Account</a>

@@ -162,14 +162,14 @@ function checkIfValidUsername() {
     return checkUsernameRequirements(input);
 }
 
-function checkIfValidPassword(submitClicked) {
+function checkIfValidPassword(markAsStillNeeded) {
     let input = getValue(PASSWORD_INPUT_ID);
     let passwordMessageSpan = document.getElementById(PASSWORD_MESSAGE_ID);
     let errorSymbolSpan = passwordMessageSpan.previousElementSibling;
 
     let meetsRequirements = checkPasswordRequirements(input);
 
-    if (submitClicked && !meetsRequirements) {
+    if (markAsStillNeeded && !meetsRequirements) {
         markAsStillNeeded();
     }
 
@@ -180,12 +180,17 @@ function checkIfValidPassword(submitClicked) {
 
 function checkIfValidConfirm() {
     let input = getValue(CONFIRM_PASSWORD_INPUT_ID);
+
+    removeConfirmError();
+    return checkConfirmRequirements(input);
+}
+
+function removeConfirmError() {
     let confirmMessageSpan = document.getElementById(CONFIRM_PASSWORD_MESSAGE_ID);
     let errorSymbolSpan = confirmMessageSpan.previousElementSibling;
 
     removeText(confirmMessageSpan);
     removeText(errorSymbolSpan);
-    return checkConfirmRequirements(input);
 }
 
 function checkIfValid() {
@@ -197,7 +202,8 @@ function checkIfValid() {
 }
 
 window.addEventListener("load", function() {
-   document.getElementById(PASSWORD_INPUT_ID).addEventListener("input", () => checkIfValidPassword(false));
-   document.getElementById(USERNAME_INPUT_ID).addEventListener("input", checkIfValidUsername);
-   document.getElementById(CONFIRM_PASSWORD_INPUT_ID).addEventListener("input", checkIfValidConfirm);
+    checkIfValidPassword(false);
+    document.getElementById(PASSWORD_INPUT_ID).addEventListener("input", () => checkIfValidPassword(false));
+    document.getElementById(USERNAME_INPUT_ID).addEventListener("input", checkIfValidUsername);
+    document.getElementById(CONFIRM_PASSWORD_INPUT_ID).addEventListener("input", () => removeConfirmError());
 });

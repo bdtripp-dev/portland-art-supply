@@ -12,7 +12,7 @@
 
 const LOGIN_USERNAME_KEY = 'login_username';
 const LOGIN_PASSWORD_KEY = 'login_password';
-const LOGIN_BUTTON_VALUE = 'login';
+const LOGIN_BUTTON_KEY = 'login';
 const CREATE_USERNAME_KEY = 'create_username';
 const CREATE_PASSWORD_KEY = 'create_password';
 const CREATE_CONFIRM_PASSWORD_KEY = 'create_confirm_password';

@@ -112,6 +112,7 @@ const UPPERCASE_REQUIREMENT_ID = "uppercase_requirement";
 const DIGIT_REQUIREMENT_ID = "digit_requirement";
 const SPECIAL_CHAR_REQUIREMENT_ID = "special_char_requirement";
 const LENGTH_REQUIREMENT_ID = "length_requirement";
+const LOGIN_BUTTON_ID = "login_btn";
 
 
 /*

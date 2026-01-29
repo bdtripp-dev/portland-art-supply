@@ -114,7 +114,7 @@ html body form section ul.requirements li span {
   text-align: center;
   letter-spacing: 4px;
 }
-html body form input.login_btn {
+html body form input#login_btn {
   padding: 14px 80px;
   font-size: 1.3em;
   color: white;
@@ -129,7 +129,7 @@ html body form input.login_btn {
   line-height: 1;
   border: none;
 }
-html body form input.login_btn:hover {
+html body form input#login_btn:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
