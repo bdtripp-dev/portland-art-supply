@@ -489,7 +489,7 @@ html {
                     grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
                     justify-content: center;
                     gap: 20px;
-                    margin: 40px 20px 20px 20px;
+                    margin: 40px 20px 60px 20px;
                     max-width: 1600px;
 
                     div {
@@ -527,7 +527,7 @@ html {
 
                 &#item_wrapper {
                     display: grid;
-                    margin: 40px 20px 20px 20px;
+                    margin: 40px 20px 60px 20px;
                     gap: 20px;
                     max-width: 1100px;
 
