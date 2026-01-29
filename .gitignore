@@ -6,3 +6,5 @@ main.jsx
 package-lock.json
 package.json
 webpack.config.js
+.env
+/vendor/
