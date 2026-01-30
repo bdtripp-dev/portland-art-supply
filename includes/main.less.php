@@ -580,7 +580,7 @@ html {
 
                                                         &#color_thumbnails {
                                                             display: grid;
-                                                            grid-template-columns: repeat(auto-fill, 40px);
+                                                            grid-template-columns: repeat(auto-fit, 40px);
                                                             grid-auto-rows: 40px;
                                                             justify-content: center;
                                                             gap: 6px;
@@ -645,6 +645,10 @@ html {
                                                                     .input_style();
                                                                     padding: 10px 0 10px 16px;
                                                                     border-radius: 11px;
+
+                                                                    &#color_drop_down {
+                                                                        padding-right: 20px; //so "Select a Color..." text doesn't get cut off
+                                                                    }
                                                                 }
 
                                                                 &#color {

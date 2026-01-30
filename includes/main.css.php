@@ -389,7 +389,7 @@ html body main section#item_wrapper div#details_wrapper div#item_details div#ite
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#color_thumbnails_wrapper div#color_thumbnails {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 40px);
+  grid-template-columns: repeat(auto-fit, 40px);
   grid-auto-rows: 40px;
   justify-content: center;
   gap: 6px;
@@ -439,6 +439,9 @@ html body main section#item_wrapper div#details_wrapper div#item_details div#ite
   border-radius: 10px;
   padding: 10px 0 10px 16px;
   border-radius: 11px;
+}
+html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div select#color_drop_down {
+  padding-right: 20px;
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div#color {
   white-space: nowrap;
