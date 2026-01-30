@@ -22,8 +22,10 @@ $login_password = get_post_value(LOGIN_PASSWORD_KEY);
 $login_pressed = get_post_value(LOGIN_BUTTON_KEY);
 $errorStatus = new stdClass();
 
-if (!$login_pressed && isset($_SERVER['HTTP_REFERER'])) {
-    set_session_value(SESSION_RETURN_TO_URL, $_SERVER['HTTP_REFERER']);
+if (!$login_pressed) {
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        set_session_value(SESSION_RETURN_TO_URL, $_SERVER['HTTP_REFERER']);
+    }
 } else {
     $returnToUrl = get_session_value(SESSION_RETURN_TO_URL);
     if ($returnToUrl != DOMAIN_NAME . CREATE_ACCOUNT_PAGE) {

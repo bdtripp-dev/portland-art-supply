@@ -343,7 +343,7 @@ html body main section#product_groups {
   grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
   justify-content: center;
   gap: 20px;
-  margin: 40px 20px 20px 20px;
+  margin: 40px 20px 60px 20px;
   max-width: 1600px;
 }
 html body main section#product_groups div.product_group {
@@ -366,7 +366,7 @@ html body main section#product_groups div.product_group a img {
 }
 html body main section#item_wrapper {
   display: grid;
-  margin: 40px 20px 20px 20px;
+  margin: 40px 20px 60px 20px;
   gap: 20px;
   max-width: 1100px;
 }
@@ -389,7 +389,7 @@ html body main section#item_wrapper div#details_wrapper div#item_details div#ite
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#color_thumbnails_wrapper div#color_thumbnails {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 40px);
+  grid-template-columns: repeat(auto-fit, 40px);
   grid-auto-rows: 40px;
   justify-content: center;
   gap: 6px;
@@ -439,6 +439,9 @@ html body main section#item_wrapper div#details_wrapper div#item_details div#ite
   border-radius: 10px;
   padding: 10px 0 10px 16px;
   border-radius: 11px;
+}
+html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div select#color_drop_down {
+  padding-right: 35px;
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div#color {
   white-space: nowrap;

@@ -1,13 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 10/21/2018
- * Time: 6:52 PM
- */
+require 'vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 function connectToDB() {
-    $dsn = "mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME . ";charset=utf8mb4";
+    $dsn = "mysql:host=" . $_ENV['DB_SERVER'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8mb4";
     $options = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Throw errors as exceptions
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // Return arrays by default
@@ -15,7 +13,7 @@ function connectToDB() {
     ];
 
     try {
-        $conn = new PDO($dsn, DB_USER, DB_PASSWORD, $options);
+        $conn = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $options);
     } catch (PDOException $e) {
         throw $e; 
     }
