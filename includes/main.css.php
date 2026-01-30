@@ -441,7 +441,7 @@ html body main section#item_wrapper div#details_wrapper div#item_details div#ite
   border-radius: 11px;
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div select#color_drop_down {
-  padding-right: 20px;
+  padding-right: 35px;
 }
 html body main section#item_wrapper div#details_wrapper div#item_details div#item_options div#drop_down_wrapper div#drop_down_options div#color {
   white-space: nowrap;

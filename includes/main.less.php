@@ -647,7 +647,7 @@ html {
                                                                     border-radius: 11px;
 
                                                                     &#color_drop_down {
-                                                                        padding-right: 20px; //so "Select a Color..." text doesn't get cut off
+                                                                        padding-right: 35px; //so text of longest options don't get cut off
                                                                     }
                                                                 }
 
