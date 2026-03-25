@@ -39,9 +39,7 @@ networks:
     name: ${ENV_NAME}_public
     external: true
   pas_net:
-    name: pas_net
     driver: bridge
-    external: true
 volumes:
   pas_db_data:
     name: pas_db_data
