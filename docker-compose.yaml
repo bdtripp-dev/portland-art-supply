@@ -31,7 +31,7 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
     volumes:
-      - pas_db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     networks:
       - pas_net
 networks:
@@ -41,6 +41,4 @@ networks:
   pas_net:
     driver: bridge
 volumes:
-  pas_db_data:
-    name: pas_db_data
-    external: true
+  db_data:
