@@ -1,0 +1,54 @@
+services:
+  portland-art-supply:
+    image: bdtrippdev/portland-art-supply:${TAG}
+    restart: always
+    labels:
+      - "deunhealth.restart=true"
+    environment:
+      - VIRTUAL_HOST=${FQDN}
+      - ENV_NAME=${ENV_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=3306
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost/healthcheck.php || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    volumes:
+      - ./.env:/var/www/html/.env:ro
+    networks:
+      - public_net
+      - pas_net
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD_FILE=/run/secrets/db_password
+      - MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db_root_password
+    secrets:
+      - db_password
+      - db_root_password
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - pas_net
+networks:
+  public_net:
+    name: ${ENV_NAME}_public
+    external: true
+  pas_net:
+    driver: bridge
+volumes:
+  db_data:
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  db_root_password:
+    file: ./secrets/db_root_password.txt

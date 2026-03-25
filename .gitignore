@@ -1,5 +1,4 @@
 .idea/
-images/
 node_modules/
 bundle.js
 main.jsx
@@ -7,4 +6,6 @@ package-lock.json
 package.json
 webpack.config.js
 .env
-/vendor/
+pas.sql
+docker-compose.override.yaml
+secrets/
