@@ -5,7 +5,10 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 function connectToDB() {
-    $dsn = "mysql:host=" . $_ENV['DB_SERVER'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8mb4";
+    $dsn = "mysql:host=" . $_ENV['DB_HOST'] .
+       ";port=" . $_ENV['DB_PORT'] .
+       ";dbname=" . $_ENV['DB_NAME'] .
+       ";charset=utf8mb4";
     $options = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Throw errors as exceptions
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // Return arrays by default

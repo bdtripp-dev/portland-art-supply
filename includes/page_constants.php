@@ -8,21 +8,15 @@
 
 const DOMAIN_NAME = 'http://localhost';
 
-const HOME_PAGE = '/portland_art_supply/';
-const ABOUT_PAGE = '/portland_art_supply/about.php';
-const LOGIN_PAGE = '/portland_art_supply/login.php';
-const LOGOUT_PAGE = '/portland_art_supply/logout.php';
-const CREATE_ACCOUNT_PAGE = '/portland_art_supply/create_account.php';
-const SHOPPING_CART_PAGE = '/portland_art_supply/shopping_cart.php';
-const SUBCATEGORIES_PAGE = '/portland_art_supply/subcategories.php';
-const GROUP_PRODUCTS_PAGE = '/portland_art_supply/product_groups.php';
-const PRODUCT_ITEMS_PAGE = '/portland_art_supply/product_items.php';
-
-/*
- * Category Pages --- remove this onece you delete the paint page
- */
-
-const PAINT_PAGE = '/portland_art_supply/paint.php';
+const HOME_PAGE = '/';
+const ABOUT_PAGE = '/about.php';
+const LOGIN_PAGE = '/login.php';
+const LOGOUT_PAGE = '/logout.php';
+const CREATE_ACCOUNT_PAGE = '/create_account.php';
+const SHOPPING_CART_PAGE = '/shopping_cart.php';
+const SUBCATEGORIES_PAGE = '/subcategories.php';
+const GROUP_PRODUCTS_PAGE = '/product_groups.php';
+const PRODUCT_ITEMS_PAGE = '/product_items.php';
 
 /*
  * Page Titles
