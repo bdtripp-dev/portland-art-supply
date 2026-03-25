@@ -1,0 +1,7 @@
+services:
+  portland-art-supply:
+    build: .
+    ports:
+      - "8081:80"
+    volumes:
+      - ./.env:/var/www/html/.env:ro

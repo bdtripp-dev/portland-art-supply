@@ -7,8 +7,8 @@
  */
 header('Content-Type: text/javascript');
 
-require_once('db_constants.php');
-require_once('page_constants.php');
+require_once('../includes/db_constants.php');
+require_once('../includes/page_constants.php');
 ?>
 
 var PRODUCT_COLOR_NAME_FIELD = '<?php echo PRODUCT_COLOR_NAME_FIELD; ?>';

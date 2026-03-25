@@ -1,9 +1,8 @@
-/*
 <?php
 
 header('Content-Type: text/css');
 ?>
-*/
+
 /* Link to color palette:
 
 https://paletton.com/#uid=60f0u0kuauvivBun-vxvonRAQiM
