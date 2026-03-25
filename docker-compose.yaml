@@ -47,8 +47,8 @@ networks:
     driver: bridge
 volumes:
   db_data:
-  secrets:
-db_password:
-  file: ./secrets/db_password.txt
-db_root_password:
-  file: ./secrets/db_root_password.txt
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+  db_root_password:
+    file: ./secrets/db_root_password.txt
