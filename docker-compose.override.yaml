@@ -7,6 +7,4 @@ services:
       - ./.env:/var/www/html/.env:ro
 networks:
   pas_net:
-    name: pas_net
-    driver: bridge
     external: true
