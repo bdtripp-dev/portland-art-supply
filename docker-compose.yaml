@@ -7,7 +7,7 @@ services:
     environment:
       - VIRTUAL_HOST=${FQDN}
       - ENV_NAME=${ENV_NAME}
-      - DB_HOST=db
+      - DB_HOST=${DB_HOST}
       - DB_PORT=3306
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
