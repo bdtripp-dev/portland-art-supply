@@ -1,0 +1,10 @@
+services:
+  portland-art-supply:
+    build: .
+    ports:
+      - "8081:80"
+networks:
+  pas_net:
+    name: pas_net
+    driver: bridge
+    external: true
