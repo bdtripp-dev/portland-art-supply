@@ -84,8 +84,8 @@ const PRODUCT_ITEM_TABLE = 'product_item';
 
 const PRODUCT_ITEM_ID_FIELD = 'product_item_id';
 const PRODUCT_ITEM_GROUP_ID_FIELD = 'product_group_id';
-const PRODUCT_ITEM_SIZE_ID_FIELD = 'size_id';
 const PRODUCT_ITEM_COLOR_ID_FIELD = 'color_id';
+const PRODUCT_ITEM_SIZE_ID_FIELD = 'size_id';
 const PRODUCT_ITEM_PRICE_FIELD = 'price';
 
 /*
