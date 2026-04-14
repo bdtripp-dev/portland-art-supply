@@ -8,4 +8,4 @@ webpack.config.js
 .env
 pas.sql
 secrets/
-.~lock.*#s
+.~lock.*#
