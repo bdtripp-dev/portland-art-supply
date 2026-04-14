@@ -3,6 +3,10 @@ services:
     build: .
     ports:
       - "8081:80"
+    volumes:
+      - ./public/css:/var/www/html/css
+      - ./public/images:/var/www/html/images
+      - ./public/js:/var/www/html/js
 networks:
   pas_net:
     name: pas_net
