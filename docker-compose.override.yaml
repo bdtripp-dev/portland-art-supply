@@ -1,12 +1,16 @@
 services:
   portland-art-supply:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     ports:
       - "8081:80"
     volumes:
-      - ./public/css:/var/www/html/css
-      - ./public/images:/var/www/html/images
-      - ./public/js:/var/www/html/js
+      - ./public:/var/www/html
+      - ./includes:/var/www/html/includes
+      - ./vendor:/var/www/html/vendor
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 networks:
   pas_net:
     name: pas_net
