@@ -6,9 +6,10 @@ services:
     ports:
       - "8081:80"
     volumes:
-      - ./public:/var/www/html
-      - ./includes:/var/www/html/includes
-      - ./vendor:/var/www/html/vendor
+      - .:/workspace        # mount entire repo
+      - ./public:/workspaces/portland-art-supply
+      - ./includes:/workspaces/portland-art-supply/includes
+      - ./vendor:/workspaces/portland-art-supply/vendor
     extra_hosts:
       - "host.docker.internal:host-gateway"
 networks:

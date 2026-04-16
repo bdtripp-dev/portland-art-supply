@@ -1,16 +1,21 @@
 FROM php:8.4-apache
 RUN rm -f /var/www/html/index.html
 RUN apt-get update \
-    && apt-get install -y curl \
-    && docker-php-ext-install mysqli pdo pdo_mysql
+    && apt-get install -y curl git \
+    && docker-php-ext-install mysqli pdo pdo_mysql \
+    && git config --global --add safe.directory /workspace
 RUN a2enmod rewrite
+RUN sed -i 's|/var/www/html|/workspaces/portland-art-supply|g' \
+    /etc/apache2/sites-available/000-default.conf
+RUN printf "<Directory /workspaces/portland-art-supply>\n\
+    Options Indexes FollowSymLinks\n\
+    AllowOverride All\n\
+    Require all granted\n\
+    </Directory>\n" \
+    >> /etc/apache2/sites-available/000-default.conf
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 COPY php.ini /usr/local/etc/php/php.ini
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
-COPY xdebug.ini /etc/php/8.4/apache2/conf.d/99-xdebug.ini
-COPY public/ /var/www/html/
-COPY includes/ /var/www/html/includes/
-COPY vendor/ /var/www/html/vendor/
 EXPOSE 80
