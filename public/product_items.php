@@ -7,14 +7,15 @@
  */
 session_start();
 
-require_once('includes/page_constants.php');
-require_once('includes/db_code.php');
-require_once('includes/art_constants.php');
-require_once('includes/db_constants.php');
-require_once('includes/ui_code.php');
-require_once('includes/shopping_cart_code.php');
-require_once('includes/login_constants.php');
-require_once('includes/utilities.php');
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/includes/page_constants.php';
+require_once PROJECT_ROOT . '/includes/db_code.php';
+require_once PROJECT_ROOT . '/includes/art_constants.php';
+require_once PROJECT_ROOT . '/includes/db_constants.php';
+require_once PROJECT_ROOT . '/includes/ui_code.php';
+require_once PROJECT_ROOT . '/includes/shopping_cart_code.php';
+require_once PROJECT_ROOT . '/includes/login_constants.php';
+require_once PROJECT_ROOT . '/includes/utilities.php';
 
 $id = get_post_value(PRODUCT_ITEM_ID_FIELD);
 $groupDescription = get_post_value(PRODUCT_GROUP_DESCRIPTION_FIELD);

@@ -1,0 +1,14 @@
+services:
+  portland-art-supply:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:80"
+    volumes:
+      - .:/workspace        # mount entire repo
+networks:
+  pas_net:
+    name: pas_net
+    driver: bridge
+    external: true
