@@ -5,7 +5,7 @@
     "../docker-compose.override.yaml"
   ],
   "service": "portland-art-supply",
-  "workspaceFolder": "/workspaces/portland-art-supply",
+  "workspaceFolder": "/workspace",
   "customizations": {
     "vscode": {
       "extensions": ["xdebug.php-debug"]
