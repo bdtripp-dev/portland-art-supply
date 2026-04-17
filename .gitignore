@@ -9,3 +9,4 @@ webpack.config.js
 pas.sql
 secrets/
 .~lock.*#
+info.php

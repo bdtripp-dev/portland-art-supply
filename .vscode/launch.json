@@ -5,9 +5,10 @@
       "name": "Dev Container: Listen for Xdebug",
       "type": "php",
       "request": "launch",
+      "hostname": "127.0.0.1",
       "port": 9003,
       "pathMappings": {
-        "/workspaces/portland-art-supply": "${workspaceFolder}"
+        "/workspaces/portland-art-supply": "${workspaceFolder}/public"
       }
     }
   ]

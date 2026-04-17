@@ -10,8 +10,6 @@ services:
       - ./public:/workspaces/portland-art-supply
       - ./includes:/workspaces/portland-art-supply/includes
       - ./vendor:/workspaces/portland-art-supply/vendor
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 networks:
   pas_net:
     name: pas_net
