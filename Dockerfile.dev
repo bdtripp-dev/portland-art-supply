@@ -5,9 +5,9 @@ RUN apt-get update \
     && docker-php-ext-install mysqli pdo pdo_mysql \
     && git config --global --add safe.directory /workspace
 RUN a2enmod rewrite
-RUN sed -i 's|/var/www/html|/workspaces/portland-art-supply|g' /etc/apache2/sites-available/000-default.conf \
-    && sed -i 's|/var/www/html|/workspaces/portland-art-supply|g' /etc/apache2/apache2.conf
-RUN printf "<Directory /workspaces/portland-art-supply>\n\
+RUN sed -i 's|/var/www/html|/workspace/public|g' /etc/apache2/sites-available/000-default.conf \
+    && sed -i 's|/var/www/html|/workspace/public|g' /etc/apache2/apache2.conf
+RUN printf "<Directory /workspace/public>\n\
     Options Indexes FollowSymLinks\n\
     AllowOverride All\n\
     Require all granted\n\

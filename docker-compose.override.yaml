@@ -7,9 +7,6 @@ services:
       - "8081:80"
     volumes:
       - .:/workspace        # mount entire repo
-      - ./public:/workspaces/portland-art-supply
-      - ./includes:/workspaces/portland-art-supply/includes
-      - ./vendor:/workspaces/portland-art-supply/vendor
 networks:
   pas_net:
     name: pas_net
