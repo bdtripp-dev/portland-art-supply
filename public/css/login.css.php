@@ -1,10 +1,7 @@
-/*
 <?php
-
-
 header('Content-Type: text/css');
 ?>
-*/
+
 /*
  * Login/New Account Form
  */
