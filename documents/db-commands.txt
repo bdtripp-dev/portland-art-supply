@@ -1,0 +1,125 @@
+| product_category              |
+| product_color                 |
+| product_group                 |
+| product_item                  |
+| product_manufacturer          |
+| product_size                  |
+| product_subcategory   
+
+SHOW CREATE TABLE product_subcategory;
+
+ALTER TABLE product_category
+  CHANGE COLUMN CategoryID category_id INT NOT NULL,
+  CHANGE COLUMN CategoryName category_name VARCHAR(200) NOT NULL;
+
+ALTER TABLE product_color
+  CHANGE COLUMN ColorID color_id INT NOT NULL,
+  CHANGE COLUMN ColorName color_name VARCHAR(200) NOT NULL;
+
+ALTER TABLE product_group
+  CHANGE COLUMN ProductGroupID product_group_id INT NOT NULL,
+  CHANGE COLUMN CategoryID category_id INT NOT NULL,
+  CHANGE COLUMN SubcategoryID subcategory_id INT NOT NULL,
+  CHANGE COLUMN ManufacturerID manufacturer_id INT NOT NULL,
+  CHANGE COLUMN GroupDescription group_description VARCHAR(200) NOT NULL,
+  CHANGE COLUMN GroupInformation group_information VARCHAR(5000) NOT NULL,
+  CHANGE COLUMN GroupCode group_code VARCHAR(1000) NOT NULL;
+
+ALTER TABLE product_item
+  CHANGE COLUMN ProductItemID product_item_id INT NOT NULL,
+  CHANGE COLUMN ProductGroupID product_group_id INT NOT NULL,
+  CHANGE COLUMN ColorID color_id INT DEFAULT NULL,
+  CHANGE COLUMN SizeID size_id INT DEFAULT NULL,
+  CHANGE COLUMN Price price DECIMAL(10,2) NOT NULL;
+
+ALTER TABLE product_manufacturer
+  CHANGE COLUMN ManufacturerID manufacturer_id INT NOT NULL,
+  CHANGE COLUMN ManufacturerName manufacturer_name VARCHAR(200) NOT NULL;
+
+ALTER TABLE product_size
+  CHANGE COLUMN SizeID size_id INT NOT NULL,
+  CHANGE COLUMN SizeDescription size_description VARCHAR(200) NOT NULL;
+
+ALTER TABLE product_subcategory
+  CHANGE COLUMN SubcategoryID subcategory_id INT NOT NULL,
+  CHANGE COLUMN CategoryID category_id INT NOT NULL,
+  CHANGE COLUMN SubcategoryName subcategory_name VARCHAR(200) NOT NULL
+
+SHOW COLUMNS FROM product_subcategory;
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE product_;
+SET FOREIGN_KEY_CHECKS = 1;
+
+| product_category              |
+| product_color                 |
+| product_group                 |
+| product_item                  |
+| product_manufacturer          |
+| product_size                  |
+| product_subcategory   
+
+LOAD DATA INFILE '/var/lib/mysql-files/Category.csv'
+INTO TABLE product_category
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(category_id, category_name);
+
+LOAD DATA INFILE '/var/lib/mysql-files/Color.csv'
+INTO TABLE product_color
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(color_id, color_name);
+
+LOAD DATA INFILE '/var/lib/mysql-files/Product Group.csv'
+INTO TABLE product_group
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(product_group_id, category_id, subcategory_id, manufacturer_id, group_description, group_information, group_code);
+
+LOAD DATA INFILE '/var/lib/mysql-files/Product Item.csv'
+INTO TABLE product_item
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(product_item_id, product_group_id, color_id, size_id, price);
+
+LOAD DATA INFILE '/var/lib/mysql-files/Manufacturer.csv'
+INTO TABLE product_manufacturer
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(manufacturer_id, manufacturer_name);
+
+LOAD DATA INFILE '/var/lib/mysql-files/Size.csv'
+INTO TABLE product_size
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(size_id, size_description);
+
+LOAD DATA INFILE '/var/lib/mysql-files/SubCategory.csv'
+INTO TABLE product_subcategory
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(subcategory_id, category_id, subcategory_name);
+
+SHOW COLUMNS FROM product_category;
+SELECT * FROM product_group Limit 10;
+SELECT COUNT(*) FROM product_group;
+
+docker exec -it portland-art-supply-portland-art-supply-1 bash
+docker exec -it portland-art-supply-db-1 mysql --local-infile=1 -u root -p
+sed -i 's/"NULL"/\\N/g' "documents/CSVs/Product Item.csv"
+docker cp ./documents/CSVs/. portland-art-supply-db-1:/var/lib/mysql-files/

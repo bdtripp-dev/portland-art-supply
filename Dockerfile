@@ -5,6 +5,7 @@ RUN apt-get update \
     && docker-php-ext-install mysqli pdo pdo_mysql
 RUN a2enmod rewrite
 COPY public/ /var/www/html/
-COPY includes/ /var/www/html/includes/
-COPY vendor/ /var/www/html/vendor/
+COPY includes/ /var/www/includes/
+COPY vendor/ /var/www/vendor/
+COPY config.php /var/www/config.php
 EXPOSE 80

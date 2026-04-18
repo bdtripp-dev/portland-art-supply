@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 10/28/2018
- * Time: 6:07 PM
- */
-
 header('Content-Type: text/css');
 ?>
 

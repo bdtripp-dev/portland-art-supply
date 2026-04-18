@@ -7,8 +7,9 @@
  */
 header('Content-Type: text/javascript');
 
-require_once('page_constants.php');
-require_once('login_constants.php');
+require_once __DIR__ . '/../../config.php';
+require_once PROJECT_ROOT . '/includes/page_constants.php';
+require_once PROJECT_ROOT . '/includes/login_constants.php';
 ?>
 
 const REQUIRED_SPECIAL_CHARACTERS = '<?php echo REQUIRED_SPECIAL_CHARACTERS; ?>';

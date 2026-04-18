@@ -1,0 +1,19 @@
+{
+  "name": "Portland Art Supply Dev",
+  "dockerComposeFile": [
+    "../docker-compose.yaml",
+    "../docker-compose.override.yaml"
+  ],
+  "service": "portland-art-supply",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": ["xdebug.php-debug"]
+    }
+  },
+  "remoteUser": "root",
+  "overrideCommand": false,
+  "remoteEnv": {
+    "VSCODE_AGENT_FOLDER": "/root/.vscode-server"
+  }
+}

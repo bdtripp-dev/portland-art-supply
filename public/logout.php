@@ -7,8 +7,9 @@
  */
 session_start();
 
-require_once('includes/utilities.php');
-require_once('includes/page_constants.php');
+require_once __DIR__ . '/../config.php';
+require_once PROJECT_ROOT . '/includes/utilities.php';
+require_once PROJECT_ROOT . '/includes/page_constants.php';
 
 $returnToUrl = $_SERVER['HTTP_REFERER'];
 

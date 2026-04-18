@@ -20,7 +20,7 @@ services:
       timeout: 5s
       retries: 3
     volumes:
-      - ./.env:/var/www/html/.env:ro
+      - ./.env:/var/www/.env:ro
     networks:
       - public_net
       - pas_net

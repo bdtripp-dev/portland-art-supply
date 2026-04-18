@@ -7,8 +7,9 @@
  */
 header('Content-Type: text/javascript');
 
-require_once('../includes/db_constants.php');
-require_once('../includes/page_constants.php');
+require_once __DIR__ . '/../../config.php';
+require_once PROJECT_ROOT . '/includes/db_constants.php';
+require_once PROJECT_ROOT . '/includes/page_constants.php';
 ?>
 
 var PRODUCT_COLOR_NAME_FIELD = '<?php echo PRODUCT_COLOR_NAME_FIELD; ?>';
