@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS portland_art_supply;
+CREATE DATABASE portland_art_supply;
+
 | product_category              |
 | product_color                 |
 | product_group                 |
