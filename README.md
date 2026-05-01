@@ -1,6 +1,6 @@
 # Portland Art Supply
 
-Portland Art Supply (PAS) is fictional e-commerce site for art supplies.   
+Portland Art Supply (PAS) is a fictional e-commerce site. 
 
 Note: This is a fully functional website except for the “checkout” process. If this was a “live” website, additional web pages would be added for the “checkout” process, to include shipping, and payment options. Plus, a separate page for admins to add and delete products from the database would be added.  
 
@@ -14,30 +14,39 @@ Note: This is a fully functional website except for the “checkout” process. 
 
 ---
 
-## Tech Stack
+## Techinal Highlights
 
-- Language: HTML, CSS, JavaScript, PHP, and SQL 
+- Designed a nine‑table relational database for category, product, and user account data. 
+- Implemented dynamic drop-down lists for product color and size options using multi-JOIN queries.
+- Used AJAX to provide real-time updates to shopping cart quantities and totals.
+- Stored PHP sessions in the database so the shopping cart is restored when the user logs in.
 
 ---
 
+## Tech Stack
+
+- Languages: HTML5, CSS3, JavaScript, PHP
+- Database: MySQL
+- DevOps / Workflow: Docker, Dev Container, GitHub Actions
+
+---
 
 Visit the site at https://portland-art-supply.bdtripp.com/  
-<br/>
 
-To view an ERD of the PAS database, visit my portfolio site at https://bdtripp.com/ . Click on the “View Details” button for PAS under the “Projects” section. Then click on the document icon to the right of “Data Modeling”.  
-<br/>
+To view an ERD of the PAS database, visit my portfolio site at https://bdtripp.com/#projects . Click on the “View Details” button for PAS. Then click on the document icon to the right of “Data Modeling”.  
 
 **Code Highlights:**
 
-Retrieve product information from database:  
-Go to includes/db_code.php lines 95 - 108
+### Code Highlights
 
-Generate HTML using PHP to create a dynamic web page that displays items in the user’s shopping cart:  
-Go to includes/ui_code.php lines 194-243
+- **Database access**  
+  [`includes/db_code.php`](includes/db_code.php) contains the SQL queries for retrieving product information from the database.
 
-Generate dynamic drop-down list for color and size options using JavaScript:  
-Go to js/pas.js.php lines 198-229  
-<br/>
+- **UI generation**  
+  [`includes/ui_code.php`](includes/ui_code.php) is responsible for dynamically generating the navigation bar (including dropdow menus), product pages, and the shopping cart interface.
+
+- **Dynamic product options**  
+  [`public/js/pas.js.php`](public/js/pas.js.php) generates the color and size dropdowns and updates the UI based on user selections.
 
 **Images:**  
 Images are organized by category and subcategory folders.
