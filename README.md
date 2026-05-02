@@ -2,7 +2,27 @@
 
 Portland Art Supply (PAS) is a fictional e-commerce site. 
 
+Visit the site at https://portland-art-supply.bdtripp.com/  
+
+To view an ERD of the PAS database, visit my portfolio site at https://bdtripp.com/#projects . Click on the “View Details” button for PAS. Then click on the document icon to the right of “Data Modeling”.  
+
 Note: This is a demo site. A production version would include checkout (shipping + payment) and an admin interface for managing products. 
+
+---
+
+## Demo
+
+A quick walkthrough of browsing products, selecting options, and updating the shopping cart:
+
+<img src="assets/pas_demo.gif" width="750" />
+
+---
+
+## Screenshots
+
+<img src="assets/product_screenshot.png" width="750" />
+<br>
+<img src="assets/shopping_cart_screenshot.png" width="750" />
 
 ---
 
@@ -31,24 +51,20 @@ Note: This is a demo site. A production version would include checkout (shipping
 
 ---
 
-Visit the site at https://portland-art-supply.bdtripp.com/  
-
-To view an ERD of the PAS database, visit my portfolio site at https://bdtripp.com/#projects . Click on the “View Details” button for PAS. Then click on the document icon to the right of “Data Modeling”.  
-
 ## Code Highlights
 
 - **Database access**  
-  [`includes/db_code.php`](includes/db_code.php) contains SQL queries for retrieving product information from the database.
+  The lookup_items function in [`includes/db_code.php`](includes/db_code.php) uses a multi-JOIN SQL query to retrieve all products within a particular product group from the database.
 
 - **UI generation**  
-  [`includes/ui_code.php`](includes/ui_code.php) is responsible for dynamically generating the navigation bar (including dropdown menus), product pages, and the shopping cart interface.
+  The show_items_in_cart function in [`includes/ui_code.php`](includes/ui_code.php) is responsible for dynamically generating the shopping cart interface.
 
 - **Dynamic product options**  
-  [`public/js/pas.js.php`](public/js/pas.js.php) generates the color and size dropdowns and updates the UI based on user selections.
+  The createDropDown function in [`public/js/pas.js.php`](public/js/pas.js.php) generates the color and size dropdowns and updates the UI based on user selections.
 
 ---
 
-## Images: ##
+## Images
 
 **Folder Structure/Organization:**
 
