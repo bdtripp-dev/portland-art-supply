@@ -54,13 +54,13 @@ A quick walkthrough of browsing products, selecting options, and updating the sh
 ## Code Highlights
 
 - **Database access**  
-  The lookup_items function in [`includes/db_code.php`](includes/db_code.php) uses a multi-JOIN SQL query to retrieve all products within a particular product group from the database.
+  The `lookup_items` function in [`includes/db_code.php`](includes/db_code.php) uses a multi-JOIN SQL query to retrieve all products within a particular product group from the database.
 
 - **UI generation**  
-  The show_items_in_cart function in [`includes/ui_code.php`](includes/ui_code.php) is responsible for dynamically generating the shopping cart interface.
+  The `show_items_in_cart` function in [`includes/ui_code.php`](includes/ui_code.php) is responsible for dynamically generating the shopping cart interface.
 
 - **Dynamic product options**  
-  The createDropDown function in [`public/js/pas.js.php`](public/js/pas.js.php) generates the color and size dropdowns and updates the UI based on user selections.
+  The `createDropDown` function in [`public/js/pas.js.php`](public/js/pas.js.php) generates the color and size dropdowns and updates the UI based on user selections.
 
 ---
 
@@ -76,7 +76,7 @@ Images are organized by category and subcategory folders.
   - General product image
   - Specific product image for a particular color and size
   - Color thumbnail
-- The category, subcategory, group code, color, and size are stored in the database for each product. The data is retrieved from the database and used to generate the `src` attribute for each `<img>` tag. (see displayItemImage function in [`includes/ui_code.php`](includes/ui_code.php))  
+- The category, subcategory, group code, color, and size are stored in the database for each product. The data is retrieved from the database and used to generate the `src` attribute for each `<img>` tag. (see `displayItemImage` function in [`includes/ui_code.php`](includes/ui_code.php))  
 
 **Naming convention for the images:**
 
