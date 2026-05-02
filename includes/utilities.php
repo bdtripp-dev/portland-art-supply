@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 10/21/2018
- * Time: 12:02 PM
- */
 
 function save_session() {
     $userID = get_session_value(SESSION_USER_ID_KEY);
@@ -53,11 +47,15 @@ function require_login() {
     restore_session();
 }
 
-function check_current_subcat($param, $value) {
-    if (isset($_GET[$param]) && $_GET[$param] === $value) {
+function check_current_subcat($categoryParam, $categoryValue, $subcategoryParam, $subcategoryValue) {
+    if (hasMatchingGETValue($categoryParam, $categoryValue) && hasMatchingGETValue($subcategoryParam, $subcategoryValue)) {
         return 'aria-current="page"';
     }
     return '';
+}
+
+function hasMatchingGETValue($param, $value) {
+    return isset($_GET[$param]) && $_GET[$param] === $value;
 }
 
 function check_current_page($url) {
