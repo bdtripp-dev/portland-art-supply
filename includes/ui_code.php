@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Brian
- * Date: 11/11/2018
- * Time: 3:14 PM
- */
-
 const ROWS_PER_COLUMN = 3;
 const QUANTITY_MIN = 1;
 const QUANTITY_MAX = 50;
@@ -94,7 +87,7 @@ function show_subcategory_dropdown($category) {
                                     <a href="' . GROUP_PRODUCTS_PAGE . 
                                         "?" . PRODUCT_CATEGORY_NAME_FIELD . "=" . urlencode($categoryName) . 
                                         "&" . PRODUCT_SUBCATEGORY_NAME_FIELD . "=" . urlencode($subcategoryName) . 
-                                        '" ' . check_current_subcat(PRODUCT_SUBCATEGORY_NAME_FIELD, $subcategoryName) . 
+                                        '" ' . check_current_subcat(PRODUCT_CATEGORY_NAME_FIELD, $categoryName,PRODUCT_SUBCATEGORY_NAME_FIELD, $subcategoryName) . 
                                     '>' . ucfirst($subcategoryName) . 
                                     '</a>
                                 </li>'; 
